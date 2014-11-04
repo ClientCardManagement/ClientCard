@@ -1,0 +1,87 @@
+.title_white {
+	margin-left: 20px;
+	margin-top: 15px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16pt;
+	font-family: Arial;
+}
+
+.title_black {
+	margin-top: 15px;
+	font-weight: bold;
+	font-size: 20pt;
+	font-family: Arial;
+}
+
+.loginForm_down {
+	margin-top: 70px;
+}
+
+.button_down {
+	margin-top: 30px;
+	margin-left: 90px;
+}
+
+.cardcenterdiv {
+	margin: 0 auto;
+	width: 560px;
+}
+
+.carderror {
+	margin: 80px 0 10px;
+	width: 560px;
+}
+
+.cardmytitle {
+	color: #333333;
+	font-size: 48px;
+	left: 300px margin :     10px 0 15px;
+}
+
+.cardmsg {
+	color: #545454;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.33;
+	margin: 10px 0 15px;
+}
+
+.cardmsgnav {
+	width: 560px;
+	margin-left: 150px;
+	margin-bottom: 15px;
+}
+
+.duoduoMainPage {
+	background-image: url("../img/background1.jpg");
+}
+
+.duoduoInfo {
+	margin-top: 40px;
+}
+.duoduoInfoImage{
+	width:90px;
+}
+.duoduoInfoTitle{
+	margin-top:20px;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.33;
+	
+}
+.duoduoInfoContent{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.33;
+	margin-top:10px;
+	margin-left:40px;
+}
+.duoduoInfoLeft{
+	float:left;
+	width:100px;
+}
+.duoduoInfoRight{
+	margin-top:20px;
+	margin-left:110px;
+}

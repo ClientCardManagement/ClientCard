@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="CardManage" namespace="/card" extends="card-base">
+		<global-results>
+			<result name="success">/card/allcardlist.jsp
+			</result>
+		</global-results>
+		<action name="GetAllCardListAction" class="cardManageAction"
+			method="getList">
+		</action>
+		<action name="FuzzyCardSearchAction" class="cardManageAction"
+			method="search">
+		</action>
+
+		<action name="AllCardGlanceAction" class="cardManageAction" method="initTree">		
+			<result name="success" >/card/allcardglance.jsp</result>
+		</action>
+		
+		<action name="GetCardByIdAction" class="cardManageAction" method="getCardById">		
+			<result name="success" >/card/allcardlist.jsp</result>
+		</action>
+		
+		<action name="GetCardByIdsAction" class="cardManageAction" method="getCardByIds">		
+			<result name="success" >/card/cardaddgroup.jsp</result>
+		</action>
+
+		 
+
+	</package>
+
+</struts>    

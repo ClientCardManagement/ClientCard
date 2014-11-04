@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="mycard" namespace="/mycard" extends="card-base">
+		<global-results>
+			<result name="success">/card/mycardlist.jsp
+			</result>
+		</global-results>
+		<action name="MyCardAction" class="myCardManageAction" method="redirect">
+			<result name="success">/card/mycardgenerate.jsp</result>
+		</action>
+		<action name="GenerateCardAction" class="myCardManageAction" method="save">
+			<result name="success" type="json">
+			<param name="includeProperties">
+					uid,callbackType,navTabId,statusCode,pageNumShown,numPerPage,pageNum,isSearchFlag,totalCount
+			</param>
+			</result>
+		</action>
+		<action name="GetMyCardListAction" class="myCardManageAction" method="getMyList">		
+			<result name="success" >/card/mycardlist.jsp</result>
+		</action>
+		
+		<action name="FuzzyCardSearchAction" class="myCardManageAction"
+			method="search">
+		</action>
+		<action name="GetFromMyCardAction" class="myCardManageAction"
+			method="getForm">
+			<result name="success">/card/mycardgenerate.jsp			
+			</result>
+		</action>
+		
+		<action name="ViewMyCardAction" class="myCardManageAction"
+			method="getForm">
+			<result name="success">/card/cardview.jsp			
+			</result>
+		</action>
+	
+		<action name="FileUploadAction" class="fileUploadAction">
+			<interceptor-ref name="fileUploadStack" />
+			<result name="upload_done" type="json">
+				<param name="includeProperties">
+					imageFileName
+				</param>
+			</result>
+		</action>
+		
+		<action name="DeleteMyCardAction" class="myCardManageAction"
+			method="delete">
+			<result name="success" type="json">
+			<param name="includeProperties">
+					uid
+			</param>
+			</result>
+		</action>
+		
+		<action name="DeleteMyACardAction" class="myCardManageAction"
+			method="deleteA">
+			<result name="success" type="json">
+			<param name="includeProperties">
+					uid
+			</param>
+			</result>
+		</action>
+		 
+		
+		<action name="GetMyCardByIdAction" class="myCardManageAction" method="getCardById">		
+			<result name="success" >/card/mycardlist.jsp</result>
+		</action>
+		
+		<action name="MyCardManageAction" class="myCardManageAction" method="save">
+			<result name="success" type="json"></result>
+		</action>
+		
+
+
+
+	</package>
+</struts>    

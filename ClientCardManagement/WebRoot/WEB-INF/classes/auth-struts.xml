@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="login" extends="struts-default">
+		<action name="loginAction" class="loginAction" method="login">
+			<result name="success" type="redirect">indexAction</result>
+			<result name="not-login" type="redirect">login</result>
+		</action>
+		<action name="logoutAction" class="loginAction" method="logout">
+			<result name="not-login" type="redirect">login</result>
+		</action>
+		<action name="login" class="loginAction" method="getLoginPage">
+			<result name="success">/login.html</result>
+		</action>	
+		
+	</package>
+	<package name="user" namespace="/auth" extends="card-base">
+		<global-results>
+			<result name="success">/auth/alluserlist.jsp
+			</result>
+		</global-results>
+		
+		<action name="GetListUserAction" class="userManageAction"
+			method="getList">
+		</action>
+		<action name="FuzzySearchAction" class="userManageAction"
+			method="search">
+		</action>
+		<action name="GetFromUserAction" class="userManageAction"
+			method="getForm">
+			<result name="success">/auth/user_form.jsp
+			</result>
+		</action>
+		<action name="SaveUserAction" class="userManageAction" method="save">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="DeleteUserAction" class="userManageAction"
+			method="delete">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="SaveUserModifyInforAciton" class="userManageAction"
+			method="modifyUserInfo">
+			<result name="success" type="json"></result>
+
+		</action>
+		<action name="checkUserPasswordAciton" class="loginAction"
+			method="checkUserPassword">
+			
+			<result name="success" type="json">
+			<param name="includeProperties">
+				isPasswordCorrect
+			</param>
+			</result>
+
+		</action>
+
+		<action name="ModifyUserInforAction" class="userManageAction"
+			method="getForm">
+			<result name="success">/auth/user_modify_form.jsp
+			</result>
+		</action>
+
+	</package>
+</struts>    

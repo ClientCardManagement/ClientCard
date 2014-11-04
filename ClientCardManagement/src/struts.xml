@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!--	<constant name="struts.devMode" value="true" />-->
+
+	<!-- action交给spring管理时 加入下面这行 -->
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="card-base" extends="struts-default">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		<interceptors>
+			<interceptor name="json"
+				class="org.apache.struts2.json.JSONInterceptor" />
+			<interceptor name="permission"
+				class="com.ClientCardManagement.interceptor.PermissionInterceptor" />
+			<interceptor-stack name="permissionStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="permission" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="permissionStack" />
+		<default-action-ref name="notFound" />
+		<global-results>
+			<result name="not-login" type="redirect">login</result>
+		</global-results>
+		<action name="notFound">
+			<result >/error/404.jsp</result>
+		</action>
+	</package>
+
+	<package name="index" extends="card-base">
+		<action name="indexAction" class="loginAction" method="getIndexPage">
+			<result name="success">/WEB-INF/index.jsp</result>
+		</action>
+	</package>
+
+	<include file="card-struts.xml" />
+	<include file="cardgenerate-struts.xml" />
+	<include file="auth-struts.xml" />
+	<include file="mycard-struts.xml" />
+	<include file="excel-struts.xml" />
+
+</struts>    
