@@ -24,6 +24,12 @@
 		<action name="GetCardByIdsAction" class="cardManageAction" method="getCardByIds">		
 			<result name="success" >/card/cardaddgroup.jsp</result>
 		</action>
+		
+		<action name="GetDepartTreeAction" class="departTreeManageAction"
+			method="initTree">
+			<result name="success">/card/departtree.jsp
+			</result>
+		</action>
 
 		 
 

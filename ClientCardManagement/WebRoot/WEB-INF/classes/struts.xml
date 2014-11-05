@@ -37,9 +37,7 @@
 	</package>
 
 	<include file="card-struts.xml" />
-	<include file="cardgenerate-struts.xml" />
 	<include file="auth-struts.xml" />
 	<include file="mycard-struts.xml" />
-	<include file="excel-struts.xml" />
 
 </struts>    
