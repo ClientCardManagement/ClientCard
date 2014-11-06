@@ -78,11 +78,10 @@ ul.rightTools li {
 		</div>
 		<div class="tabsContent">
 			<div>
-<!-- 
 				<div id="departtree" layoutH="146"
 					style="float: left; display: block; overflow: auto; width: 180px; border: solid 1px #CCC; line-height: 21px; background: #fff">
 				</div>
--->
+
 				<div id="jbsxBox" class="unitBox" style="margin-left: 186px;">
 
 				</div>

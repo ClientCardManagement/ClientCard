@@ -220,7 +220,7 @@ public class CardManageAction extends ActionSupport {
 	public void query() {
 
 		List values = new ArrayList();
-		// System.out.println(comjnam+" - "+depart+" - "+name);
+		System.out.println(comjnam+" - "+depart+" - "+name);
 		String hql = "from TrnNc as tn where tn.trnMid.sharekub = 0 and tn.comjnam like ?";
 		if (comjnam != null) {
 			comjnam = comjnam.trim();
@@ -241,6 +241,7 @@ public class CardManageAction extends ActionSupport {
 		String order = " order by tn.comjnam, tn.firstnam, tn.secdnam,tn.id desc";
 		String numHql = "select count(*) " + hql;
 		hql += order;
+		System.out.println(hql);
 		targetList = queryService.query(hql, values,
 				(pageNum - 1) * numPerPage, numPerPage);
 		totalCount = queryService.queryNum(numHql, values);

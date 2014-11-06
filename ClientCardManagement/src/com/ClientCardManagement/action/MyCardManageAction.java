@@ -21,8 +21,10 @@ import com.ClientCardManagement.model.TrnGroup;
 import com.ClientCardManagement.model.TrnMid;
 import com.ClientCardManagement.model.TrnNc;
 import com.ClientCardManagement.service.CardService;
-
+import com.ClientCardManagement.service.DepartTreeService;
+ 
 import com.ClientCardManagement.service.QueryService;
+import com.ClientCardManagement.service.TrnAccessService;
 import com.ClientCardManagement.service.TrnMidService;
 import com.ClientCardManagement.service.TrnNcService;
 import com.opensymphony.xwork2.ActionContext;
@@ -46,10 +48,10 @@ public class MyCardManageAction extends ActionSupport {
 	private QueryService queryService;
 	private List<TrnNc> targetList;
 	private TrnNc target;
-	
+	@Resource
+	private TrnAccessService trnAccessService;//访问记录服务
 	private TrnNc trnNc;
 	private TrnMid trnMid;
-
 
 	private String navTabId;
 	private String callbackType = "closeCurrent";
@@ -91,13 +93,13 @@ public class MyCardManageAction extends ActionSupport {
 	= Arrays.asList("==请选择==","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23",
 			"24","25","26","27","28","29","30","31");
 	
-	private List<String> yearList = new ArrayList<String>(105);
+	private List<String> yearList = new ArrayList<String>(100);
 
 	
 	public MyCardManageAction() {
 		super();
 		// TODO Auto-generated constructor stub
-		for(int i = 0; i < 105; i++){
+		for(int i = 0; i < 104; i++){
 			this.yearList.add(String.valueOf(i+1910));
 		}
 	}
@@ -269,6 +271,25 @@ public class MyCardManageAction extends ActionSupport {
 		this.forwardUrl = forwardUrl;
 	}
 
+	public String getForm() {
+		
+		ActionContext ctx = ActionContext.getContext();
+		Map<String, Object> session = ctx.getSession();
+		if (uid != null && !uid.equals("")) {
+
+			target = trnNcService.get(uid);
+			username = trnNcService.searchUsername(target.getTrnMid().getCrtusr());
+			TrnAccess trnAccess = new TrnAccess();//访问记录save
+			MstUser mstUser = new MstUser();
+			mstUser.setUserid(((Long)session.get("userid")));
+			trnAccess.setMstUser(mstUser);
+			trnAccess.setTrnMid(target.getTrnMid());
+			trnAccess.setCompltime(new Timestamp(System.currentTimeMillis()));
+
+			trnAccessService.save(trnAccess);
+		}
+		return SUCCESS;
+	}
 
 	public String save(){
 		
@@ -316,9 +337,6 @@ public class MyCardManageAction extends ActionSupport {
 		if (comjnam != null && !comjnam.equals("")) {
 			comjnam = comjnam.trim();
 		}
-		if(depart != null && !depart.equals("")){
-			depart = depart.trim();
-		}
 		if (name != null && !name.equals("")) {
 			name = name.trim();
 		}
@@ -354,18 +372,6 @@ public class MyCardManageAction extends ActionSupport {
 		targetList = queryService.query(hql, values,
 				(pageNum - 1) * numPerPage, numPerPage);
 		totalCount = queryService.queryNum(numHql, values);
-	}
-	
-	public String getForm() {
-		
-		ActionContext ctx = ActionContext.getContext();
-		Map<String, Object> session = ctx.getSession();
-		if (uid != null && !uid.equals("")) {
-
-			target = trnNcService.get(uid);
-			username = trnNcService.searchUsername(target.getTrnMid().getCrtusr());
-		}
-		return SUCCESS;
 	}
 	
 

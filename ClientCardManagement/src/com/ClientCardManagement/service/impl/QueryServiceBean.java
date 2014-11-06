@@ -23,6 +23,7 @@ public class QueryServiceBean implements QueryService {
 		int N = values.size();
 		for (int i = 0; i < N; i++) {
 			query.setParameter(i, values.get(i));
+			System.out.println("-"+values.get(i));
 		}
 		query.setFirstResult(begin);
 		query.setMaxResults(end);
