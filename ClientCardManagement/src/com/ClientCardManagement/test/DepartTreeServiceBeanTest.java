@@ -43,7 +43,7 @@ public class DepartTreeServiceBeanTest {
 
 	}
 
-	@Test
+	//@Test
 	public void testBlank() {
 		String a = " ";
 		System.out.println("-" + a.trim() + "-" + a.trim().length());

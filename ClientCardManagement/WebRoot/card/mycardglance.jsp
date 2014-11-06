@@ -74,11 +74,11 @@ ul.rightTools li {
 		</div>
 		<div class="tabsContent">
 			<div>
-<!-- 
+
 				<div id="myDepartTree" layoutH="146"
 					style="float: left; display: block; overflow: auto; width: 180px; border: solid 1px #CCC; line-height: 21px; background: #fff">
 				</div>
- -->
+
 				<div id="myCardList" class="unitBox" style="margin-left: 186px;">
 				</div>
 

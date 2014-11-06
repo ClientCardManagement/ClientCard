@@ -152,7 +152,7 @@
 							</li>
 							<li><a href="card/mycardglance.jsp" target="navTab"
 								rel="我的名片">我的名片</a></li>
-							<li><a href="jump.jsp" target="navTab" rel="公司部门视图">公司部门视图</a>
+							<li><a href="card/GetDepartTreeAction" target="navTab" rel="公司部门视图">公司部门视图</a>
 							</li>
 						</ul>
 

@@ -71,8 +71,10 @@
 			<result name="success" type="json"></result>
 		</action>
 		
-
-
+		<action name="GetMyDepartTreeAction" class="myDepartTreeManageAction" method="initTree">
+			<result name="success">/card/departtree.jsp</result>
+		</action>
+		
 
 	</package>
 </struts>    
