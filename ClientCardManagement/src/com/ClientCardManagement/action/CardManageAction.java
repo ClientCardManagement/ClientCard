@@ -14,6 +14,7 @@ import com.ClientCardManagement.model.MstUser;
 import com.ClientCardManagement.model.TrnGroup;
 import com.ClientCardManagement.model.TrnMid;
 import com.ClientCardManagement.model.TrnNc;
+import com.ClientCardManagement.service.GroupManageService;
 import com.ClientCardManagement.service.QueryService;
 import com.ClientCardManagement.service.UserService;
 
@@ -35,6 +36,9 @@ public class CardManageAction extends ActionSupport {
 	private QueryService queryService;
 	@Resource
 	private UserService userService;
+	@Resource
+	private GroupManageService groupManageService;
+	
 	private List<TrnNc> targetList;
 	private List<TrnGroup> groupList;
 	private List<MstUser> userList;
@@ -275,6 +279,8 @@ public class CardManageAction extends ActionSupport {
 			TrnNc o = service.get(id);
 			targetList.add(o);
 		}
+		
+		groupList = groupManageService.getList(((Long) session.get("userid")).toString());
 		
 		return SUCCESS;
 

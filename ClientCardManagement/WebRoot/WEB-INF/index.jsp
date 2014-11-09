@@ -165,7 +165,7 @@
 					<div class="accordionContent">
 
 						<ul class="tree treeFolder collapse">
-							<li><a target="navTab" rel="组管理" href="jump.jsp">组管理</a></li>
+							<li><a target="navTab" rel="组管理" href="card/GetListGroupManageAction">组管理</a></li>
 						</ul>
 
 					</div>
@@ -177,7 +177,7 @@
 					<div class="accordionContent">
 
 						<ul class="tree treeFolder collapse">
-							<li><a target="navTab" rel="访问日志管理" href="jump.jsp">访问日志管理</a>
+							<li><a target="navTab" rel="访问日志管理" href="card/GetListTrnAccessAction">访问日志管理</a>
 							</li>
 						</ul>
 
