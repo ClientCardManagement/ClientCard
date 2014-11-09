@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<form id="pagerForm" method="post"
-			action="card/GroupManageAction">
+			action="group/GroupManageAction">
 			<input type="hidden" name="pageNum" value="1" />
 			<input type="hidden" name="numPerPage" value="${numPerPage}"/>
 		</form>

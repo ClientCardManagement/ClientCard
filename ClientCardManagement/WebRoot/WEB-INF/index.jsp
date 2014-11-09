@@ -165,7 +165,7 @@
 					<div class="accordionContent">
 
 						<ul class="tree treeFolder collapse">
-							<li><a target="navTab" rel="组管理" href="card/GetListGroupManageAction">组管理</a></li>
+							<li><a target="navTab" rel="组管理" href="group/GetListGroupManageAction">组管理</a></li>
 						</ul>
 
 					</div>

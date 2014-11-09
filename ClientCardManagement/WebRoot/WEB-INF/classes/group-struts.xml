@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="TrnGroupNc" namespace="/card" extends="card-base">
+	<package name="TrnGroupNc" namespace="/group" extends="card-base">
 		<action name="GetListTrnGroupNcAction" class="trnGroupNcAction" method="getList">		
-			<result name="success" >/card/TrnGroupNc.jsp</result>
+			<result name="success" >/group/TrnGroupNc.jsp</result>
 		</action>
 		<action name="SaveTrnGroupNcAction" class="trnGroupNcAction" method="save">
 			<result name="success" type="json"></result>
@@ -12,31 +12,31 @@
 			<result name="success" type="json"></result>
 		</action>
 		<action name="SearchTrnGroupNcAction" class="trnGroupNcAction" method="searchGroupCard">
-			<result name="success" >/card/groupcardlist.jsp</result>
+			<result name="success" >/group/groupcardlist.jsp</result>
 		</action>
 		<action name="SearchAllTrnGroupNcAction" class="trnGroupNcAction" method="searchAllGroupCard">
-			<result name="success" >/card/groupallcardlist.jsp</result>
+			<result name="success" >/group/groupallcardlist.jsp</result>
 		</action>
 	</package>
 	
 	
-	<package name="GroupManage" namespace="/card" extends="card-base">
+	<package name="GroupManage" namespace="/group" extends="card-base">
 		<action name="GroupManageAction" class="groupManageAction"
 			method="getList">
-			<result name="success">/card/groupmanage.jsp
+			<result name="success">/group/groupmanage.jsp
 			</result>
 
 		</action>
 
 
-	<action name="GetListGroupManageAction" class="groupManageAction"
+		<action name="GetListGroupManageAction" class="groupManageAction"
 			method="getList">
-			<result name="success">/card/groupmanageindex.jsp
+			<result name="success">/group/groupmanageindex.jsp
 			</result>
 		</action>
 		<action name="GetFromGroupManageAction" class="groupManageAction"
 			method="getForm">
-			<result name="success">/card/groupmanage_form.jsp
+			<result name="success">/group/groupmanage_form.jsp
 			</result>
 
 		</action>

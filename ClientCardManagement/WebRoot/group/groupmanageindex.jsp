@@ -20,7 +20,7 @@
 <script type="text/javascript" src="js/dtree.js"></script>
 
 <script type="text/javascript">
-	partRefresh("jbsxBoxZu", {}, "card/SearchAllTrnGroupNcAction");
+	partRefresh("jbsxBoxZu", {}, "group/SearchAllTrnGroupNcAction");
 </script>
 
 <script type="text/javascript">
@@ -30,13 +30,13 @@
 			</script>
 <s:iterator value="targetPra">
 	<script type="text/javascript">		
-	               tree.add(${groupid},0,'${groupnam}','javascript','${groupnote}','${groupid}');       
-	         	 </script>
+		tree.add(${groupid},0,'${groupnam}','javascript','${groupnote}','${groupid}');       
+	</script>
 </s:iterator>
 <s:iterator value="targetChi">
 	<script type="text/javascript">		
-	               tree.add(${groupid},${prgroupid},'${groupnam}','javascript','${groupnote}','${groupid}');       
-	         	 </script>
+		tree.add(${groupid},${prgroupid},'${groupnam}','javascript','${groupnote}','${groupid}');       
+	</script>
 </s:iterator>
 <script type="text/javascript"> 
 	         	document.getElementById("tree").innerHTML=tree;
@@ -49,16 +49,16 @@
 	         			
 	         			
 	        	 		$('#delete').attr("title","确定要删除吗?");
-	        	 		$('#delete').attr("href","card/DeleteGroupManageAction?uid="+$('#groupid').val());
+	        	 		$('#delete').attr("href","group/DeleteGroupManageAction?uid="+$('#groupid').val());
 	         			
 	         			$('#delete').removeAttr('class');
 	         			$('#delete').addClass('button');
 	         			
-	         			$('#update').attr("href","card/GetFromGroupManageAction?uid="+$('#groupid').val());
+	         			$('#update').attr("href","group/GetFromGroupManageAction?uid="+$('#groupid').val());
 	         			$('#update').removeAttr('class');
 	         			$('#update').addClass('button');
 	         			
-	         			partRefresh("jbsxBoxZu", {}, "card/SearchTrnGroupNcAction?groupid="+$('#groupid').val());
+	         			partRefresh("jbsxBoxZu", {}, "group/SearchTrnGroupNcAction?groupid="+$('#groupid').val());
 	         			return false;	
 	         		})
 	         	})
@@ -112,7 +112,6 @@
 						return false;
 			      	});
 			      })
-		
 	       	</script>
 
 
@@ -127,7 +126,7 @@
 			<input type="hidden" id="groupid" target="sid_user" value=""/>
 			<ul class="rightTools">
 				<li>
-					<a class="button" href="card/GetFromGroupManageAction" mask="true"
+					<a class="button" href="group/GetFromGroupManageAction" mask="true"
 						target="dialog" rel="add"><span>新建组</span> </a>
 				</li>
 				<li>
@@ -139,7 +138,7 @@
 					</a>
 				</li>
 				<li>
-					<a class="button" href="card/GroupManageAction" target="ajax"
+					<a class="button" href="group/GroupManageAction" target="ajax"
 						rel="jbsxBoxZu"><span>查看所有组</span> </a>
 				</li>
 			</ul>

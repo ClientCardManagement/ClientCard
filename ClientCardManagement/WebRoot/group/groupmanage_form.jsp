@@ -4,7 +4,7 @@
 
 <div class="pageContent">
 	
-	<form method="post" action="card/SaveGroupManageAction" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)">
+	<form method="post" action="group/SaveGroupManageAction" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)">
 		<div class="pageFormContent" layoutH="58">
 
 			<div class="unit">
