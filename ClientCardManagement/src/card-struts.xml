@@ -29,7 +29,7 @@
 
 
 		<action name="GetCardByIdsAction" class="cardManageAction" method="getCardByIds">		
-			<result name="success" >/card/cardaddgroup.jsp</result>
+			<result name="success" >/group/cardaddgroup.jsp</result>
 		</action>
 		 
 
