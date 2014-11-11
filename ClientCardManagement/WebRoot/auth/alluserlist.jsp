@@ -18,8 +18,7 @@
 			<input type="hidden" name="numPerPage" value="${numPerPage}" />
 		</form>
 		<div class="pageHeader">
-			<form onsubmit="return navTabSearch(this);"
-				action="auth/FuzzySearchAction" method="post">
+			<form onsubmit="return navTabSearch(this);" action="auth/FuzzySearchAction" method="post">
 				<div class="searchBar">
 
 					<table class="searchContent">

@@ -39,5 +39,6 @@
 	<include file="card-struts.xml" />
 	<include file="auth-struts.xml" />
 	<include file="mycard-struts.xml" />
-
+    <include file="access-struts.xml" />
+    <include file="group-struts.xml" />
 </struts>    

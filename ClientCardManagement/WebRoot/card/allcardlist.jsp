@@ -7,8 +7,23 @@
 		<title>名片列表</title>
 		<script type="text/javascript" src="resource/js/util.js"></script>
 		<script type="text/javascript">
-
-</script>
+		$("#add_to_group_sdd1").click( function(event) {
+			$add_to_group = $(this);
+			var ids = getIds("table_body_duoduo_1");
+			if (ids != "") {
+				var oldhref = $($add_to_group).attr('href');
+				var href = $($add_to_group).attr('href') + "?idsString=" + ids;
+				$($add_to_group).attr('href', href);
+				dialogAction($add_to_group, event);
+				$($add_to_group).attr('href', oldhref);
+			} else {
+				alertMsg.warn('请选择要追加的记录！');
+				return false;
+			}
+	
+			return false;
+		});
+		</script>
 	</head>
 	<body>
 

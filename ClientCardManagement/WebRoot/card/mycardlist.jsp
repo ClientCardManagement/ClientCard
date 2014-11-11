@@ -10,6 +10,23 @@
 		partRefresh("myCardList", {}, "mycard/GetMyCardListAction");
 	}
 
+	$("#add_to_group_sdd2").click( function(event) {
+		$add_to_group = $(this);
+		var ids = getIds("table_body_zhuge_1");
+
+		if (ids != "") {
+			var oldhref = $($add_to_group).attr('href');
+			var href = $($add_to_group).attr('href') + "?idsString=" + ids;
+			$($add_to_group).attr('href', href);
+			dialogAction($add_to_group, event);
+			$($add_to_group).attr('href', oldhref);
+		} else {
+			alertMsg.warn('请选择要追加的记录！');
+			return false;
+		}
+
+		return false;
+	});
 	$("#deleteAlot").click( function(event) {
 		var href = "mycard/DeleteMyCardAction";
 		$this = $(this);
@@ -78,7 +95,10 @@
 						<a class="delete" href="mycard/DeleteMyACardAction?uid={sid_user}"
 							title="确定删除？" target="ajaxTodo" callback="RefreshFunction"> <span>删除名片</span> </a>
 					</li>
-					
+					<li>
+						<a id="add_to_group_sdd2" title="追加到组" class="add" mask="true"
+							href="card/GetCardByIdsAction" rel="add"><span>追加到组</span> </a>
+					</li>
 					<li class="line">
 						line
 					</li>

@@ -8,12 +8,12 @@
 		<script type="text/javascript" src="resource/js/util.js"></script>
 		<script type="text/javascript">
 	function MyOwnFunction() {
-		partRefresh("jbsxBoxZu", {}, "card/SearchTrnGroupNcAction?groupid="
+		partRefresh("jbsxBoxZu", {}, "group/SearchTrnGroupNcAction?groupid="
 				+ $('#groupid').val());
 	}
 
 	$("#del").click( function(event) {
-		var href = "card/DeleteTrnGroupNcAction";
+		var href = "group/DeleteTrnGroupNcAction";
 		$this = $(this);
 		$($this).removeAttr('href');
 		var ids = getIds("table_body_suo");
@@ -44,7 +44,7 @@
 	</head>
 	<body>
 		<form id="pagerForm" method="post"
-			action="card/SearchTrnGroupNcAction?groupid=${groupid}">
+			action="group/SearchTrnGroupNcAction?groupid=${groupid}">
 			<input type="hidden" name="pageNum" value="1" />
 			<input type="hidden" name="numPerPage" value="${numPerPage}" />
 		</form>
