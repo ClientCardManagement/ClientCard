@@ -32,7 +32,7 @@
 
 	<package name="index" extends="card-base">
 		<action name="indexAction" class="loginAction" method="getIndexPage">
-			<result name="success">/WEB-INF/index.jsp</result>
+			<result name="success">/index.jsp</result>
 		</action>
 	</package>
 

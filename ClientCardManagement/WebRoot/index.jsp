@@ -177,7 +177,7 @@
 					<div class="accordionContent">
 
 						<ul class="tree treeFolder collapse">
-							<li><a target="navTab" rel="访问日志管理" href="card/GetListTrnAccessAction">访问日志管理</a>
+							<li><a target="navTab" rel="访问日志管理" href="access/GetListTrnAccessAction">访问日志管理</a>
 							</li>
 						</ul>
 

@@ -2,16 +2,16 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 
-	<package name="TrnAccess" namespace="/card" extends="card-base">
+	<package name="TrnAccess" namespace="/access" extends="card-base">
 		<action name="GetListTrnAccessAction" class="trnAccessAction"
 			method="getList">
-			<result name="success">/card/visitlog.jsp
+			<result name="success">/access/visitlog.jsp
 			</result>
 		</action>
 
 		<action name="GetFromTrnAccessAction" class="trnAccessAction"
 			method="getForm">
-			<result name="success">/card/visitlog_form.jsp
+			<result name="success">/access/visitlog_form.jsp
 			</result>
 		</action>
 		<action name="SaveTrnAccessAction" class="trnAccessAction"
@@ -24,7 +24,7 @@
 		</action>
 		<action name="VisitLogSearchAction" class="trnAccessAction"
 			method="search">
-			<result name="success">/card/visitlog.jsp
+			<result name="success">/access/visitlog.jsp
 			</result>
 		</action>
 	</package>
