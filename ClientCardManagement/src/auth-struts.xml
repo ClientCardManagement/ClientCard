@@ -53,7 +53,6 @@
 			</result>
 
 		</action>
-
 		<action name="ModifyUserInforAction" class="userManageAction"
 			method="getForm">
 			<result name="success">/auth/user_modify_form.jsp

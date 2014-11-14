@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +9,6 @@
 	function RefreshFunction() {
 		partRefresh("myCardList", {}, "mycard/GetMyCardListAction");
 	}
-
 	$("#add_to_group_sdd2").click( function(event) {
 		$add_to_group = $(this);
 		var ids = getIds("table_body_zhuge_1");
@@ -56,6 +55,10 @@
 		}
 		event.preventDefault();
 	});
+<<<<<<< HEAD
+=======
+	
+>>>>>>> origin/master
 	$("#ExportMyCardExcel").click( function(event) {
 		var href = "excel/ExportMyCardExcelAction";
 		$this = $(this);
@@ -68,6 +71,10 @@
 			$($this).attr('href', getHref);
 		}
 	});
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 </script>
 	</head>
 	<body>
