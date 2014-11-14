@@ -23,7 +23,19 @@
 	
 			return false;
 		});
+		
+		$("#ExportExcel").click( function(event) {
+			var href = "excel/ExportExcelAction";
+			$this = $(this);
+			$($this).removeAttr('href');
+			var ids = getIds("table_body_duoduo_1");
+			if (ids != "") {
+				var getHref = href + "?ids=" + ids;
+				$($this).attr('href', getHref);
+			}
+		});
 		</script>
+		
 	</head>
 	<body>
 
@@ -56,10 +68,8 @@
 					<li>
 
 						<a id="ExportExcel" class="add" target="dwzExport"
-							title="将选中的名片导出到EXCEL？"> <span>导出EXCEL</span> </a>
+							title="将选中的名片导出到EXCEL？"> <span>导出EXCEL</span> </a> 
 					</li>
-
-
 
 				</ul>
 			</div>

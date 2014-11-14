@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="excel" namespace="/excel" extends="card-base">
+
+		<action name="ExportExcelAction" class="excelAction" method="exportExcel">
+		<result name="success" type="stream">  
+                <param name="contentType">application/vnd.ms-excel</param>  
+                <param name="contentDisposition">filename="${fileName}"</param>  
+                <param name="inputName">excelStream</param>  
+            </result>  
+			
+		</action>
+		
+		<action name="ExportMyCardExcelAction" class="excelAction" method="exportExcel">
+		<result name="success" type="stream">  
+                <param name="contentType">application/vnd.ms-excel</param>  
+                <param name="contentDisposition">filename="${fileName}"</param>  
+                <param name="inputName">excelStream</param>  
+            </result>  
+			
+		</action>
+	</package>
+</struts>    

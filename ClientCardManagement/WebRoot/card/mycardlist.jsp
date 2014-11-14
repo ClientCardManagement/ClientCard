@@ -56,7 +56,18 @@
 		}
 		event.preventDefault();
 	});
-	
+	$("#ExportMyCardExcel").click( function(event) {
+		var href = "excel/ExportMyCardExcelAction";
+		$this = $(this);
+		$($this).removeAttr('href');
+
+		var ids = getIds("table_body_zhuge_1");
+
+		if (ids != "") {
+			var getHref = href + "?ids=" + ids;
+			$($this).attr('href', getHref);
+		}
+	});
 </script>
 	</head>
 	<body>
@@ -107,7 +118,10 @@
 							href="card/GetCardByIdsAction" rel="add"><span>批量删除</span> </a>
 							<input type="hidden" name="idsString" id="idsString" />
 					</li>
-
+					<li>
+						<a id="ExportMyCardExcel" class="add" target="dwzExport"
+							title="将选中的名片导出到EXCEL？"> <span>导出EXCEL</span> </a>
+					</li>
 				</ul>
 			</div>
 			<table class="table" width="99%" layoutH="240" rel="jbsxBox">
