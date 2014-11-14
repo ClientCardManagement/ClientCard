@@ -55,10 +55,7 @@
 		}
 		event.preventDefault();
 	});
-<<<<<<< HEAD
-=======
-	
->>>>>>> origin/master
+
 	$("#ExportMyCardExcel").click( function(event) {
 		var href = "excel/ExportMyCardExcelAction";
 		$this = $(this);
@@ -71,10 +68,6 @@
 			$($this).attr('href', getHref);
 		}
 	});
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 </script>
 	</head>
 	<body>
